@@ -17,7 +17,7 @@ class Lab3Task1JunitTest {
 
 	@Test
 	void TC03() {
-		assertEquals("MJQQT PPZ61", cipher.shift("Hello KKU61", 5));
+		assertEquals("KHOOR NNX61", cipher.shift("Hello KKU61", 3));
 	}
 	
 	@Test
