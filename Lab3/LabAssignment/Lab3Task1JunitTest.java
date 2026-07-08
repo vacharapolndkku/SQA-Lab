@@ -17,12 +17,12 @@ class Lab3Task1JunitTest {
 
 	@Test
 	void TC03() {
-		assertEquals("KHOOR NNX61", cipher.shift("Hello KKU61", 3));
+		assertEquals("PPZ", cipher.shift("KKU", 5));
 	}
 	
 	@Test
 	void TC04() {
-		assertEquals("ABC+-*/", cipher.shift("XYZ+-*/", 3));
+		assertEquals("invalid", cipher.shift("1234", 3));
 	}
 
 }

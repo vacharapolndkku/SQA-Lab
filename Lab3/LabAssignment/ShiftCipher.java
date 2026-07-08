@@ -8,9 +8,6 @@ public class ShiftCipher {
 		
         StringBuilder stbuilder = new StringBuilder();
         char currentChar;
-        
-        message = message.toUpperCase();
- 
         int length = message.length();
 
         key = key%num_char;
@@ -18,18 +15,14 @@ public class ShiftCipher {
         for(int i = 0; i < length; i++){
             currentChar = message.charAt(i);
            
-            
-            if (currentChar >= 'A' && currentChar <= 'Z'){
-            	char shiftedChar = (char) (currentChar + key);
-            	
-            	if (shiftedChar > 'Z') {
-            		shiftedChar = (char) (shiftedChar - num_char);
-            	}
-            	stbuilder.append(shiftedChar);
+            if (currentChar > 'Z' || currentChar < 'A') {
+                return "invalid";
+            } else if ((char) (currentChar + key) > 'Z') {
+                currentChar = (char) (currentChar - num_char);
+            } else if ((char) (currentChar + key) < 'A'){
+                currentChar = (char) (currentChar + num_char);
             }
-               else {
-				stbuilder.append(currentChar);
-			}
+            stbuilder.append((char) (currentChar + key));
         }
 
         return stbuilder.toString();
